@@ -2,6 +2,7 @@ var mysql = require("mysql");
 var inquirer = require("inquirer");
 var Table = require("cli-table");
 
+// create the connection information for the sql database
 var connection = mysql.createConnection({
     host: "localhost",
     PORT: 3333,
@@ -10,12 +11,14 @@ var connection = mysql.createConnection({
     database: "bamazon"
 });
 
+// connect to the mysql server and sql database
 connection.connect(function (err) {
     if (err) throw err;
     console.log("Connected as id " + connection.threadId);
+    showProductOptions(); 
 });
 
-
+// function to show user the product options
 let showProductOptions = function () {
     let query = "Select * FROM products";
     connection.query(query, function (err, res) {
@@ -38,6 +41,7 @@ let showProductOptions = function () {
     });
 };
 
+// function to confirm or deny order request 
 function purchaseOrder(ID, amtNeeded) {
     connection.query('Select * FROM products WHERE item_id = ' + ID, function (err, res) {
         if (err) { console.log(err) };
@@ -54,6 +58,7 @@ function purchaseOrder(ID, amtNeeded) {
     });
 };
 
+// function to ask the user what they want to purchase
 function userPrompt() {
   inquirer
     .prompt([
@@ -76,6 +81,3 @@ function userPrompt() {
         purchaseOrder(IDrequested, numberRequested);
     });
 };
-
-
-showProductOptions(); 
