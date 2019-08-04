@@ -19,7 +19,7 @@ connection.connect(function (err) {
 });
 
 // function to show user the product options
-let showProductOptions = function () {
+function showProductOptions() {
     let query = "Select * FROM products";
     connection.query(query, function (err, res) {
         if (err) throw err;
