@@ -20,8 +20,8 @@ connection.connect(function (err) {
 
 // function to show user the product options
 function showProductOptions() {
-    let query = "Select * FROM products";
-    connection.query(query, function (err, res) {
+    let queryStr = "Select * FROM products";
+    connection.query(queryStr, function (err, res) {
         if (err) throw err;
         let showTable = new Table({
             head: ["Item ID", "Product", "Category", "Price", "Quantity"],
