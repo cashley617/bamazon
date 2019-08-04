@@ -1,6 +1,6 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
-var Table = require("cli-table");
+// var Table = require("cli-table");
 
 // create the connection information for the sql database
 var connection = mysql.createConnection({
