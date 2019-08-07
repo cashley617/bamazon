@@ -1,14 +1,14 @@
 var mysql = require("mysql");
 var inquirer = require("inquirer");
-// var Table = require("cli-table");
+var Table = require("cli-table");
 
 // create the connection information for the sql database
 var connection = mysql.createConnection({
     host: "localhost",
-    PORT: 8080,
+    PORT: 3306,
     user: "root",
-    password: "",
-    database: "bamazon"
+    password: "password",
+    database: "bamazon_db"
 });
 
 // connect to the mysql server and sql database
@@ -52,7 +52,7 @@ function purchaseOrder(ID, amtNeeded) {
 
             connection.query("UPDATE products SET stock_quantity = stock_quantity - " + amtNeeded + "WHERE item_id = " + ID);
         } else {
-            console.log("Unfortunately, we do not have enough " + res[0].product_name + "to fill your order.");
+            console.log("Unfortunately, we do not have enough " + res[0].product_name + " to fill your order.");
         };
         showProductOptions();
     });

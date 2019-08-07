@@ -16,6 +16,10 @@ This App is organized first by required packages, then global variables, and fin
 ### To use it:
 Open your Terminal and navigate to the project. 
 
+* Once you run the project, you will immediately be given the inventory table: 
+
+![Inventory] (/images/bamazon1.png)
+
 
 ### The recipe: 
 BAmazon is built from:
