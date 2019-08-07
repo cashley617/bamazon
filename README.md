@@ -18,7 +18,7 @@ Open your Terminal and navigate to the project.
 
 * Once you run the project, you will immediately be given the inventory table: 
 
-![Inventory] (/images/bamazon1.png)
+![Inventory](/images/bamazon1.png)
 
 
 ### The recipe: 
